@@ -1,0 +1,1 @@
+#sudo kubectl create secret tls tls-cert --cert=/etc/letsencrypt/live/zachandrews.com/fullchain.pem --key=/etc/letsencrypt/live/zachandrews.com/privkey.pem
