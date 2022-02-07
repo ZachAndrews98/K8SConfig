@@ -41,3 +41,13 @@ spec:
             name: keycloak
             port:
               number: 8080
+  - host: tacos.zachandrews.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: tacos-svc
+            port:
+              number: 5000
