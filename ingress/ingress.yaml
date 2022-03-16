@@ -6,10 +6,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
-  tls:
-  - hosts:
-    - "*.zachandrews.com"
-    secretName: tls-cert
+#  tls:
+#  - hosts:
+#    - "*.zachandrews.com"
+#    secretName: tls-cert
   rules:
   - host: www.zachandrews.com
     http:
