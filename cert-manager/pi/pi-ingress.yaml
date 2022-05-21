@@ -1,0 +1,23 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+  name: pi-ingress
+spec:
+  tls:
+  - hosts:
+    - pi.zachandrews.com
+    secretName: pi-chapter-tls
+  rules:
+  - host: pi.zachandrews.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: example-service
+            port: 
+              number: 80

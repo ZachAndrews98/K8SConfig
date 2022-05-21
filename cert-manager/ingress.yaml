@@ -1,0 +1,23 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+  name: example-app
+spec:
+  tls:
+  - hosts:
+    - zachandrews.com
+    secretName: example-app-tls
+  rules:
+  - host: zachandrews.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: example-service
+            port: 
+              number: 80
